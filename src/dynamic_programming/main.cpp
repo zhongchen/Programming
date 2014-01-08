@@ -1,9 +1,11 @@
-#include "smartpointer.h"
-using namespace std; 
+#include "knapsack.h"
+#include "subset_sum.h"
+#include "card_game.h"
 
 int main(int argc, char** argv){
-  shared_ptr_test();
-  unique_ptr_test();
+  //knapsack_test();
+  subset_sum_test();
+  //card_game_test();
   return 0;
 }
 
