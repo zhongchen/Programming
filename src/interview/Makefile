@@ -16,4 +16,4 @@ $(EXEC): $(OBJS)
 	$(cc) $(LDFLAGS) $(FLAG) $< -o $@
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJS) $(EXEC)
