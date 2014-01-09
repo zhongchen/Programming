@@ -14,7 +14,8 @@ void print_parenthesis_helper(string str, int lsize, int rsize);
 
 void print_parenthesis_test()
 {
-  for (int i=1; i<5; ++i)
+  int num = 5;
+  for (int i=1; i<num; ++i)
   {
     cout<<i<<'\t'<<"parathesis"<<endl;
     print_parenthesis(i);
