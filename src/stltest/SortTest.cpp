@@ -14,64 +14,51 @@ using namespace std;
 
 void SortTest()
 {
-	cout<<"Different Sorting Test"<<endl;
-	nth_element_test();
-	partial_sort_test();
+    cout<<"Different Sorting Test"<<endl;
+    nth_element_test();
+    partial_sort_test();
 }
 
 void nth_element_test()
 {
-	vector<int> vec; 
-	vec.push_back(3);
-	vec.push_back(4);
-	vec.push_back(1);
-	vec.push_back(6);
-	vec.push_back(2);
-	vec.push_back(5);
-	vector<int>::iterator goalitr = vec.begin() + 3;
-	std::nth_element(vec.begin(), goalitr, vec.end()); 
-	cout<<*goalitr<<endl;
+    vector<int> vec={3,4,1,6,2,5}; 
+    auto itr = vec.begin() + 3;
+    std::nth_element(vec.begin(), itr, vec.end()); 
+    cout<<*itr<<endl;
 
-	for (auto i : vec)
-	{
-		cout<<i<<'\t';
-	}
+    std::copy(vec.begin(), vec.end(), ostream_iterator<int>(std::cout, " "));
 
-	cout<<endl;
+    cout<<endl;
 
-	goalitr = vec.begin() + 1;
-	std::nth_element(vec.begin(), goalitr, vec.end(), std::greater<int>()); 
-	cout<<*goalitr<<endl;
+    itr = vec.begin() + 1;
+    std::nth_element(vec.begin(), itr, vec.end(), std::greater<int>()); 
+    cout<<*itr<<endl;
 
-	for (auto i : vec)
-	{
-		cout<<i<<'\t';
-	}
-
-	cout<<endl;
-
-	std::copy(begin(vec), end(vec), std::ostream_iterator<int>(std::cout, " "));
-
-	cout<<endl;
+    std::copy(vec.begin(), vec.end(), ostream_iterator<int>(std::cout, " "));
+    cout<<endl;
 }
 
 void partial_sort_test()
 {
-	vector<int> vec; 
-	vec.push_back(3);
-	vec.push_back(4);
-	vec.push_back(1);
-	vec.push_back(6);
-	vec.push_back(2);
-	vec.push_back(5);
-	
-	vector<int>::iterator goalitr = vec.begin() + 3;
-	std::nth_element(vec.begin(), goalitr, vec.end()); 
-	cout<<*goalitr<<endl;
+    vector<int> vec = {3,4,1,6,2,5};
+    int n = 3;
 
-	for (auto i : vec)
-	{
-		cout<<i<<'\t';
-	}
+    cout<<"The original vector is"<<endl;
+    std::copy(vec.begin(), vec.end(), ostream_iterator<int>(std::cout, " "));
+    cout<<endl;
+    //sort the first n element
+    auto itr = vec.begin() + n;
+    cout<<"First "<<n<<" are sorted in ascending order"<<endl;
+
+    std::partial_sort(vec.begin(), itr, vec.end()); 
+    std::copy(vec.begin(), vec.end(), ostream_iterator<int>(std::cout, " "));
+    std::cout<<endl;
+
+    n = 2;
+    cout<<"First "<<n<<" are sorted in descending order"<<endl;
+    itr = vec.begin() + n;
+    std::partial_sort(vec.begin(), itr, vec.end(), std::greater<int>());
+    std::copy(vec.begin(), vec.end(), ostream_iterator<int>(std::cout, " "));
+    std::cout<<endl;
 }
 

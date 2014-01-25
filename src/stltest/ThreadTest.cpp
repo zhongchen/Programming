@@ -7,12 +7,12 @@ using namespace std;
 class MyClass
 {
 public:
-	void foo(int& i)
-	{
-		std::mutex lock;
-		std::lock_guard<std::mutex> guard(lock);
-		cout<<"MyClass: "<<++i<<endl;
-	}
+    void foo(int& i)
+    {
+        std::mutex lock;
+        std::lock_guard<std::mutex> guard(lock);
+        cout<<"MyClass: "<<++i<<endl;
+    }
 };
 
 
