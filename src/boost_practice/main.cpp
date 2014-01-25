@@ -1,10 +1,34 @@
 #include <iostream>
 #include <vector>
-#include <boost/lambda/lambda.hpp>
 #include <iterator>
 #include <algorithm>
+#include <unordered_map>
+using namespace std;
 
-int main()
+vector<char> MissingAlphabets(string& inputString)
 {
-    using namespace boost::lambda;
+   
+    std::transform(inputString.begin(), inputString.end(),
+                   inputString.begin(), ::tolower);
+    
+    cout<<inputString<<endl;
+    unordered_map<char, int> countMap;
+    
+
+}
+int main(int argc, char* argv[])
+{
+    string test1 = "A quick brown fox jumps over the lazy dog";
+    auto result = MissingAlphabets(test1);
 }    
+
+
+
+
+
+
+
+
+
+
+
