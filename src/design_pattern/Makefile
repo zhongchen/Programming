@@ -1,4 +1,4 @@
-cc = clang++ 
+cc = g++ 
 FLAG = -c -Wall -std=c++11 -O1 
 LDFLAGS =  
 SRCS = main.cpp character_weapon.cpp singleton.cpp \

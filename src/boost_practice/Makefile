@@ -1,11 +1,11 @@
-cc = clang++ 
+cc = clang++
 FLAG = -c -Wall -std=c++11 -fno-omit-frame-pointer -O1 \
-       -g -fno-optimize-sibling-calls  
-LDFLAGS = 
-SRCS = main.cpp 
+       -g -fno-optimize-sibling-calls
+LDFLAGS =
+SRCS = main.cpp RangeAdaptor.cpp
 
 OBJS = $(SRCS:.cpp=.o)
-EXEC = main 
+EXEC = main
 
 all: $(SRCS) $(EXEC)
 
